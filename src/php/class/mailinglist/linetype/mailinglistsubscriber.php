@@ -31,9 +31,18 @@ class mailinglistsubscriber extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.email' => ':{t}_email',
-            '{t}.name' => ':{t}_name',
-            '{t}.nickname' => ':{t}_nickname',
+            '{t}.email' => (object) [
+                'expression' => ':{t}_email',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.name' => (object) [
+                'expression' => ':{t}_name',
+                'type' => 'varchar(255)',
+            ],
+            '{t}.nickname' => (object) [
+                'expression' => ':{t}_nickname',
+                'type' => 'varchar(255)',
+            ],
         ];
     }
 

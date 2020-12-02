@@ -21,7 +21,10 @@ class mailinglist extends \Linetype
             ],
         ];
         $this->unfuse_fields = [
-            '{t}.title' => ':{t}_title',
+            '{t}.title' => (object) [
+                'expression' => ':{t}_title',
+                'type' => 'varchar(255)',
+            ],
         ];
         $this->children = [
             (object) [
